@@ -7,8 +7,8 @@ from http.server import HTTPServer, SimpleHTTPRequestHandler
 def parse_args():
     parser = argparse.ArgumentParser(description="Python HTTP server with optional Basic Auth.")
     parser.add_argument("--port", type=int, default=8000, help="Port to serve on (default: 8000)")
-    parser.add_argument("-u", help="Username for Basic Auth (if provided, password is required)")
-    parser.add_argument("-p", dest="password", help="Password for Basic Auth")
+    parser.add_argument("--user", help="Username for Basic Auth (if provided, password is required)")
+    parser.add_argument("--password", dest="password", help="Password for Basic Auth")
     return parser.parse_args()
 
 class AuthHandler(SimpleHTTPRequestHandler):
